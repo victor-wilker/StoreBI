@@ -1,0 +1,67 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Order_ID, style: "display: block" %>
+    <%= form.number_field :Order_ID %>
+  </div>
+
+  <div>
+    <%= form.label :Order_Priority, style: "display: block" %>
+    <%= form.text_field :Order_Priority %>
+  </div>
+
+  <div>
+    <%= form.label :Order_Quantity, style: "display: block" %>
+    <%= form.number_field :Order_Quantity %>
+  </div>
+
+  <div>
+    <%= form.label :Sales, style: "display: block" %>
+    <%= form.text_field :Sales %>
+  </div>
+
+  <div>
+    <%= form.label :Ship_Mode, style: "display: block" %>
+    <%= form.text_field :Ship_Mode %>
+  </div>
+
+  <div>
+    <%= form.label :Profit, style: "display: block" %>
+    <%= form.text_field :Profit %>
+  </div>
+
+  <div>
+    <%= form.label :Customer_Name, style: "display: block" %>
+    <%= form.text_field :Customer_Name %>
+  </div>
+
+  <div>
+    <%= form.label :Region, style: "display: block" %>
+    <%= form.text_field :Region %>
+  </div>
+
+  <div>
+    <%= form.label :Customer_Segment, style: "display: block" %>
+    <%= form.text_field :Customer_Segment %>
+  </div>
+
+  <div>
+    <%= form.label :Product_Category, style: "display: block" %>
+    <%= form.text_field :Product_Category %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
